@@ -1,8 +1,7 @@
-<h1>New Article</h1>
-<!--
-<%= render 'form', article: @article %>
--->
 
+<h1 class="text-center mt-4">New Article</h1>
+<%= render 'form', article: @article %>
+<!--
 <% if @article.errors.any? %>
     <h2>The following errors prevented the article from being saved</h2>
     <ul>
@@ -12,7 +11,7 @@
     </ul>
 <% end %>
 
-<%= form_with scope: :article, url: articles_path , local: true do |f| %> <!-- No envia la informacion en ajax con el local: true, utiliza metodo POST --> 
+<%= form_with scope: :article, url: articles_path , local: true do |f| %> <!-- No envia la informacion en ajax con el local: true, utiliza metodo POST -
     <p>
         <%= f.label :title  %>
         <%= f.text_field :title %>
@@ -27,7 +26,8 @@
     </p>
 <% end %>
 
+-->
 
-<%= link_to 'Back', articles_path %>
+
 
 

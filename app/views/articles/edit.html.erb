@@ -1,32 +1,33 @@
-<h1>Editing Article</h1>
 
-<% if @article.errors.any? %>
-    <h2>The following errors prevented the article from being saved</h2>
-    <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+<h1 class="text-center mt-4">Edit Article</h1>
+<!--
+        <% if @article.errors.any? %>
+            <h2>The following errors prevented the article from being saved</h2>
+            <ul>
+                <% @article.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
         <% end %>
-    </ul>
-<% end %>
 
 
+        <%= form_with(model: @article , local: true ) do |f| %> <!-- No envia la informacion en ajax con el local: true, utiliza metodo POST  
+            <p>
+                <%= f.label :title  %>
+                <%= f.text_field :title %>
+            </p>
+            <p>
+                <%= f.label :description  %>
+                <%= f.text_area :description %>
+            </p>
 
-<%= form_with(model: @article , local: true ) do |f| %> <!-- No envia la informacion en ajax con el local: true, utiliza metodo POST --> 
-    <p>
-        <%= f.label :title  %>
-        <%= f.text_field :title %>
-    </p>
-    <p>
-        <%= f.label :description  %>
-        <%= f.text_area :description %>
-    </p>
+            <p>
+                <%= f.submit %>
+            </p>
+        <% end %> -->
 
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
+        <%= render 'form', article: @article %>
 
-<!-- <%= render 'form', article: @article %> -->
+        <%= link_to 'Show', @article %> |
+      
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>

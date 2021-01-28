@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params.require(:article).permit(:title, :description))
     #render plain: @article.inspect #esto enseña el articulo que se recibe al hacer submit.
     #redirect_to article_path(@article) o redirect_to @article
-
+    @article.user = User.first
     respond_to do |format|
       if @article.save
         flash[:notice] = "Article was created"

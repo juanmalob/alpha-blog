@@ -26,7 +26,11 @@ gem 'will_paginate', '~> 3.3.0'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+#gem 'bootsnap', '>= 1.4.4', require: false
+#gem 'bootsnap', '>= 1.4.4'
+gem 'bootsnap', '~> 1.7'
+
+gem 'minitest-rails'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -49,6 +53,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'minitest', '~> 5.8', '>= 5.8.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
